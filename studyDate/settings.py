@@ -42,6 +42,8 @@ INSTALLED_APPS = [
 
     #User added apps
     'base.apps.BaseConfig',
+    'rest_framework',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -52,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = 'studyDate.urls'
@@ -122,7 +125,18 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS = [ 
+    BASE_DIR / 'static'
+]
+MEDIA_URL = '/images/'
+MEDIA_ROOT = BASE_DIR / 'static/images'
+#STATIC_ROOT = 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+CORS_ALLOW_ALL_ORIGINS = True
+AUTH_USER_MODEL = 'base.User'
