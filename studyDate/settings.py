@@ -128,7 +128,8 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [ 
     BASE_DIR / 'static'
 ]
-
+MEDIA_URL = '/images/'
+MEDIA_ROOT = BASE_DIR / 'static/images'
 #STATIC_ROOT = 
 
 # Default primary key field type
@@ -138,3 +139,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 CORS_ALLOW_ALL_ORIGINS = True
+AUTH_USER_MODEL = 'base.User'
